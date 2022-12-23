@@ -44,7 +44,7 @@ function App() {
 
 const List = () => {
   return(
-      list.map(function(item) {
+      list.map(item => {
         return (
           <div key={item.objectID}>
             <span>
