@@ -1,6 +1,15 @@
 import React from "react";
 import "./App.css";
 const getTitle = () => 'React';
+class Developer{
+  constructor(firstName, lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+getName(){
+  return this.firstName +' ' +this.lastName;
+}
+}
 
 const list = [
   {
@@ -27,6 +36,7 @@ function App() {
       <h1> Hello {getTitle("React")} </h1>
       <label htmlFor="search">Search:</label>
       <input id="search" type="text" />
+      <Echo />
      <List /> 
     </div>
   );
@@ -49,4 +59,12 @@ const List = () => {
   )
 }
 
+const Echo = () => {
+  const Simon = new Developer('Simon', 'Gideon')
+  return (
+    <div>
+      {Simon.getName()};
+    </div>
+  )
+}
 export default App;
