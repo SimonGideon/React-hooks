@@ -46,4 +46,5 @@ const List = () =>
       <span>{item.points}</span>
     </div>
   ));
+  
 export default App;
