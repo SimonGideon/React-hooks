@@ -1,6 +1,15 @@
 import React from "react";
 import "./App.css";
-const getTitle = () => 'React';
+const getTitle = () => "React";
+class Developer {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
 
 const list = [
   {
@@ -27,22 +36,26 @@ function App() {
       <h1> Hello {getTitle("React")} </h1>
       <label htmlFor="search">Search:</label>
       <input id="search" type="text" />
-      {
-        list.map(function(item) {
-          return (
-            <div key={item.objectID}>
-              <span>
-                <a href={item.url}>{item.title}</a>
-              </span>
-              <span>{item.author}</span>
-              <span>{item.num_comments}</span>
-              <span>{item.points}</span>
-            </div>
-          ) 
-        })
-      }
+      <Echo />
+      <List />
     </div>
   );
 }
 
+const List = () =>
+  list.map((item) => (
+    <div key={item.objectID}>
+      <span>
+        <a href={item.url}>{item.title}</a>
+      </span>
+      <span>{item.author}</span>
+      <span>{item.num_comments}</span>
+      <span>{item.points}</span>
+    </div>
+  ));
+
+const Echo = () => {
+  const Simon = new Developer("Simon", "Gideon");
+  return <div>{Simon.getName()};</div>;
+};
 export default App;
