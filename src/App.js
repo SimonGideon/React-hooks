@@ -21,21 +21,32 @@ function App() {
       objectID: 1,
     },
   ];
+  const handleSearch = event => {
+    console.log(event.target.value);
+  };
+  return (
+    <div>
+      <h1>My Hacker Stories</h1>
+      <Search onSearch={handleSearch} />
+      <List list={stories}/>
+    </div>
+  );
+}
+
+const Search = ( { onSearch } ) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   // handle change function
   const handleChange = event => {
     setSearchTerm(event.target.value);
+    onSearch(event);
   }
   return (
     <div>
-      <h1> Hello {getTitle("React")} </h1>
       <label htmlFor="search">Search:</label>
       <input id="search" type="text" onChange={handleChange} />
       <p>
         Searching for <strong>{searchTerm}</strong>
       </p>
-      <hr />
-      <List list={stories}/>
     </div>
   );
 }
