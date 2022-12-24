@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 const getTitle = () => "React";
-const list = [
+const stories = [
   {
     title: 'React',
     url: 'https://reactjs.org/',
@@ -21,6 +21,7 @@ const list = [
 ];
 
 function App() {
+  // handle change function
   const handleChange = event => {
     console.log(event.target.value);
   }
@@ -30,7 +31,7 @@ function App() {
       <label htmlFor="search">Search:</label>
       <input id="search" type="text" onChange={handleChange} />
       <hr />
-      <List />
+      <List list={stories}/>
     </div>
   );
 }
