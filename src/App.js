@@ -28,9 +28,8 @@ function App() {
     setSearchTerm(event.target.value);
   };
 // search function
-  const searchedStories = stories.filter(story =>{
-    return story.title.toLowerCase().includes(searchTerm);
-  });
+  const searchedStories = stories.filter(story => story.title.toLowerCase().includes(searchTerm);
+  };
   return (
     <div>
       <h1>My Hacker Stories</h1>
