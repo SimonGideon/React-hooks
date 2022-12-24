@@ -28,7 +28,7 @@ function App() {
     setSearchTerm(event.target.value);
   };
 // search function
-  const searchedStories = stories.filter(function(story) {
+  const searchedStories = stories.filter(story =>{
     return story.title.toLowerCase().includes(searchTerm);
   });
   return (
