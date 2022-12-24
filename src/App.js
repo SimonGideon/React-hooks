@@ -36,7 +36,7 @@ function App() {
   );
 }
 
-const List = () =>
+const List = ( { list } ) =>
   list.map((item) => (
     <div key={item.objectID}>
       <span>
@@ -47,5 +47,5 @@ const List = () =>
       <span>{item.points}</span>
     </div>
   ));
-  
+
 export default App;
