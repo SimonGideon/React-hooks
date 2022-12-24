@@ -28,8 +28,7 @@ function App() {
     setSearchTerm(event.target.value);
   };
 // search function
-  const searchedStories = stories.filter(story => story.title.toLowerCase().includes(searchTerm);
-  };
+  const searchedStories = stories.filter(story => story.title.toLowerCase().includes(searchTerm.toLocaleLowerCase()));
   return (
     <div>
       <h1>My Hacker Stories</h1>
@@ -45,7 +44,7 @@ const Search = props => {
       <label htmlFor="search">Search:</label>
       <input id="search" type="text" onChange={ props.onSearch} />
       <p>
-        Searching for <strong>{searchTerm}</strong>
+        Searching for <strong>{props.searchTerm}</strong>
       </p>
     </div>
   );
